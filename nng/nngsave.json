@@ -259,7 +259,8 @@
     },
     {
       "lean": "lemma or_symm (P Q : Prop) : P ∨ Q → Q ∨ P :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro pq,\r\ncases pq with p q,\r\n---caso p\r\n  right,\r\n  exact p,\r\n\r\n---caso q\r\n  left,\r\n  exact q,\r\n"
     },
     {
       "lean": "lemma and_or_distrib_left (P Q R : Prop) : P ∧ (Q ∨ R) ↔ (P ∧ Q) ∨ (P ∧ R) :=\n",
