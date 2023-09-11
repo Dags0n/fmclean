@@ -239,7 +239,8 @@
     },
     {
       "lean": "lemma and_trans (P Q R : Prop) : P ∧ Q → Q ∧ R → P ∧ R :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro pq,\r\nintro qr,\r\nsplit,\r\n---parte p\r\ncases pq with p q,\r\nexact p,\r\n\r\n---parte r\r\ncases qr with q r,\r\nexact r,\r\n"
     },
     {
       "lean": "lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=\n",
