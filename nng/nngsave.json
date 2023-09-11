@@ -85,7 +85,7 @@
     {
       "lean": "lemma add_mul (a b t : mynat) : (a + b) * t = a * t + b * t :=\n",
       "isSolved": true,
-      "editorText": "induction t with t ht,\r\nrw mul_zero,\r\nrw mul_zero,\r\nrw mul_zero,\r\nrw add_zero,\r\nrefl,\r\nrw mul_succ,\r\nrw mul_succ,\r\nrw mul_succ,\r\nrw ht,\r\nsimp,"
+      "editorText": "induction t with t ht,\r\nrw mul_zero,\r\nrw mul_zero,\r\nrw mul_zero,\r\nrw add_zero,\r\nrefl,\r\nrw mul_succ,\r\nrw mul_succ,\r\nrw mul_succ,\r\nrw ht,\r\nrw add_assoc,\r\nrw add_assoc,\r\nrw ← add_assoc (b*t) a b,\r\nrw add_comm (b*t) a,\r\nrw  add_assoc,\r\nrefl,\r\n"
     },
     {
       "lean": "lemma mul_comm (a b : mynat) : a * b = b * a :=\n",
@@ -139,7 +139,8 @@
     },
     {
       "lean": "example (P Q : Type) (p : P) (h : P → Q) : Q :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "exact h(p),\r\n"
     },
     {
       "lean": "example : mynat → mynat :=\n",
@@ -167,8 +168,7 @@
     },
     {
       "lean": "example (P Q : Type) : (P → Q) → ((Q → empty) → (P → empty)) :=\n",
-      "editorText": "sorry"
-    },
+      "editorText": "sorry"    },
     {
       "lean": "example (A B C D E F G H I J K L : Type)\n(f1 : A → B) (f2 : B → E) (f3 : E → D) (f4 : D → A) (f5 : E → F)\n(f6 : F → C) (f7 : B → C) (f8 : F → G) (f9 : G → J) (f10 : I → J)\n(f11 : J → I) (f12 : I → H) (f13 : E → H) (f14 : H → K) (f15 : I → L)\n : A → L :=\n",
       "editorText": "sorry"
