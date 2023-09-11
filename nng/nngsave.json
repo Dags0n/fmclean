@@ -244,7 +244,8 @@
     },
     {
       "lean": "lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro iff_pq,\r\nintro iff_qr,\r\ncases iff_pq with pq qp,\r\ncases iff_qr with qr rq,\r\nsplit,\r\n---parte p -> r\r\n  intro p,\r\n  apply qr,\r\n  apply pq,\r\n  exact p,\r\n\r\n---parte r -> p\r\n  intro r,\r\n  apply qp,\r\n  apply rq,\r\n  exact r,\r\n  "
     },
     {
       "lean": "lemma iff_trans (P Q R : Prop) : (P ↔ Q) → (Q ↔ R) → (P ↔ R) :=\n",
