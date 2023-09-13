@@ -31,7 +31,10 @@ end
 theorem doubleneg_law :
   ¬¬P ↔ P  :=
 begin
-  sorry,
+  split,
+    apply doubleneg_elim P,
+
+    apply doubleneg_intro P,
 end
 
 ------------------------------------------------
