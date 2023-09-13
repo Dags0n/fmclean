@@ -19,7 +19,13 @@ end
 theorem doubleneg_elim :
   ¬¬P → P  :=
 begin
-  sorry,
+  intro nnp,
+  by_cases p : P,
+    exact p,
+
+    exfalso,
+    apply nnp,
+    exact p,
 end
 
 theorem doubleneg_law :
