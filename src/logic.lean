@@ -118,9 +118,9 @@ theorem contrapositive_law :
   (P → Q) ↔ (¬Q → ¬P)  :=
 begin
   split,
-    apply impl_as_contrapositive,
+    apply impl_as_contrapositive P Q,
 
-    apply impl_as_contrapositive_converse,
+    apply impl_as_contrapositive_converse P Q,
 end
 
 
@@ -245,7 +245,10 @@ end
 theorem demorgan_conj_law :
   ¬(P∧Q) ↔ (¬Q ∨ ¬P)  :=
 begin
-  sorry,
+  split,
+    apply demorgan_conj P Q,
+
+    apply demorgan_conj_converse P Q,
 end
 
 theorem demorgan_disj_law :
