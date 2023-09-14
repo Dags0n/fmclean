@@ -206,7 +206,12 @@ end
 theorem demorgan_disj_converse :
   (¬P ∧ ¬Q) → ¬(P∨Q)  :=
 begin
-  sorry,
+  intros npnq pq,
+  cases npnq with np nq,
+  cases pq with p q,
+    contradiction,
+
+    contradiction,
 end
 
 theorem demorgan_conj :
