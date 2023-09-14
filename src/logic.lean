@@ -56,7 +56,12 @@ end
 theorem conj_comm :
   (P ∧ Q) → (Q ∧ P)  :=
 begin
-  sorry,
+  intro pq,
+  cases pq with p q,
+  split,
+    exact q,
+
+    exact p,
 end
 
 
