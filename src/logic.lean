@@ -500,7 +500,10 @@ end
 theorem demorgan_forall_law :
   ¬(∀x, P x) ↔ (∃x, ¬P x)  :=
 begin
-  sorry,
+  split,
+    apply demorgan_forall U P,
+
+    apply demorgan_forall_converse U P,
 end
 
 theorem demorgan_exists_law :
