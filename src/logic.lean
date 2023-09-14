@@ -99,7 +99,10 @@ end
 theorem impl_as_contrapositive :
   (P → Q) → (¬Q → ¬P)  :=
 begin
-  sorry,
+  intros pq nq,
+  by_contradiction p,
+  have q : Q := pq(p),
+  apply nq q,
 end
 
 theorem impl_as_contrapositive_converse :
