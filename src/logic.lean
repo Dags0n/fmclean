@@ -108,7 +108,10 @@ end
 theorem impl_as_contrapositive_converse :
   (¬Q → ¬P) → (P → Q)  :=
 begin
-  sorry,
+  intros nqnp p,
+  by_contradiction nq,
+  have np : ¬P := nqnp(nq),
+  apply np p,
 end
 
 theorem contrapositive_law :
