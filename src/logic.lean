@@ -174,7 +174,12 @@ end
 theorem conj_as_negdisj :
   P∧Q → ¬(¬P∨¬Q)  :=
 begin
-  sorry,
+  intros pq npnq,
+  cases pq with p q,
+  cases npnq,
+    contradiction,
+
+    contradiction,
 end
 
 
