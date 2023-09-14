@@ -75,8 +75,7 @@ begin
   intros npq p,
   cases npq with np q,
     exfalso,
-    apply np,
-    contradiction,
+    apply np p,
 
     exact q,
 end
@@ -84,7 +83,12 @@ end
 theorem disj_as_impl :
   (P ∨ Q) → (¬P → Q)  :=
 begin
-  sorry,
+  intros pq np,
+  cases pq with p q,
+    by_contradiction,
+    apply np p,
+
+    exact q,
 end
 
 
