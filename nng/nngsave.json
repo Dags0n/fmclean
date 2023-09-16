@@ -424,7 +424,8 @@
     },
     {
       "lean": "theorem not_succ_le_self (a : mynat) : ¬ (succ a ≤ a) :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "intro h,\r\ncases h with x hx,\r\ncases x with y,\r\n  rw add_zero at hx,\r\n  apply ne_succ_self a hx,\r\n\r\n  rw succ_add at hx,\r\n  rw ← add_succ at hx,\r\n  symmetry at hx,\r\n  have ssy := eq_zero_of_add_right_eq_self(hx),\r\n  apply succ_ne_zero (succ y) ssy,\r\n  "
     },
     {
       "lean": "theorem add_le_add_left {a b : mynat} (h : a ≤ b) (t : mynat) :\n  t + a ≤ t + b :=\n",
