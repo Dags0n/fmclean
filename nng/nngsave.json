@@ -354,11 +354,12 @@
     },
     {
       "lean": "theorem mul_eq_zero_iff (a b : mynat): a * b = 0 ↔ a = 0 ∨ b = 0 :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "split,\r\n  exact eq_zero_or_eq_zero_of_mul_eq_zero a b,\r\n\r\n  intro h,\r\n  cases h with a_zero b_zero,\r\n    rw a_zero,\r\n    rw zero_mul,\r\n    refl,\r\n\r\n    rw b_zero,\r\n    rw mul_zero,\r\n    refl,\r\n    "
     },
     {
       "lean": "theorem mul_left_cancel (a b c : mynat) (ha : a ≠ 0) : a * b = a * c → b = c :=\n",
-      "editorText": "sorry"
+      "editorText": "sorry,"
     },
     {
       "lean": "lemma one_add_le_self (x : mynat) : x ≤ 1 + x :=\n",
