@@ -404,7 +404,8 @@
     },
     {
       "lean": "theorem le_total (a b : mynat) : a ≤ b ∨ b ≤ a :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "induction b with b hb,\r\n  have zero_a := zero_le(a),\r\n  right,\r\n  exact zero_a,\r\n\r\n  cases hb with ab ba,\r\n    have a_sb := le_succ a b ab,\r\n    left,\r\n    exact a_sb,\r\n\r\n    cases ba with x hx,\r\n    cases x with y,\r\n      left,\r\n      apply le_succ,\r\n      use 0,\r\n      rw add_zero at hx ⊢,\r\n      exact hx.symm,\r\n\r\n      right,\r\n      use y,\r\n      rw succ_add at ⊢,\r\n      rw add_succ at hx,\r\n      exact hx,\r\n      "
     },
     {
       "lean": "lemma le_succ_self (a : mynat) : a ≤ succ a :=\n",
