@@ -394,7 +394,8 @@
     },
     {
       "lean": "lemma le_zero (a : mynat) (h : a ≤ 0) : a = 0 :=\n",
-      "editorText": "sorry"
+      "isSolved": true,
+      "editorText": "cases h with x hx,\r\nhave a_zero := add_right_eq_zero(hx.symm),\r\nexact a_zero,\r\n"
     },
     {
       "lean": "lemma succ_le_succ (a b : mynat) (h : a ≤ b) : succ a ≤ succ b :=\n",
