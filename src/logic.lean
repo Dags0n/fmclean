@@ -20,7 +20,7 @@ theorem doubleneg_elim :
   ¬¬P → P  :=
 begin
   intro nnp,
-  by_cases p : P,
+  by_cases p : P, -- ⛤ LEM
     exact p,
 
     exfalso,
@@ -107,7 +107,7 @@ theorem impl_as_contrapositive_converse :
   (¬Q → ¬P) → (P → Q)  :=
 begin
   intros nqnp p,
-  by_contradiction nq,
+  by_contradiction nq, -- ⛤ RAA
   have np : ¬P := nqnp(nq),
   apply np p,
 end
@@ -216,7 +216,7 @@ theorem demorgan_conj :
   ¬(P∧Q) → (¬Q ∨ ¬P)  :=
 begin
   intro n_pq,
-  by_cases h : Q,
+  by_cases h : Q, -- ⛤ LEM
     right,
     intro p,
     apply n_pq,
@@ -477,10 +477,10 @@ theorem demorgan_forall :
   ¬(∀x, P x) → (∃x, ¬P x)  :=
 begin
   intro h,
-  by_contradiction h1,
+  by_contradiction h1, -- ⛤ RAA
   apply h,
   intro x,
-  by_contradiction px,
+  by_contradiction px, -- ⛤ RAA
   apply h1,
   existsi x,
   exact px,
@@ -540,7 +540,7 @@ theorem forall_as_neg_exists_converse :
   ¬(∃x, ¬P x) → (∀x, P x)  :=
 begin
   intros h x,
-  by_contradiction npx,
+  by_contradiction npx, -- ⛤ RAA
   apply h,
   existsi x,
   exact npx,
@@ -550,7 +550,7 @@ theorem exists_as_neg_forall_converse :
   ¬(∀x, ¬P x) → (∃x, P x)  :=
 begin
   intro h,
-  by_contradiction h1,
+  by_contradiction h1, -- ⛤ RAA
   apply h,
   intros x px,
   apply h1,
