@@ -85,8 +85,7 @@ theorem disj_as_impl :
 begin
   intros pq np,
   cases pq with p q,
-    by_contradiction,
-    apply np p,
+    contradiction,
 
     exact q,
 end
